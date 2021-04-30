@@ -33,7 +33,7 @@ class FileStorage:
             json.dump(temp, f)
 
     def reload(self):
-        """Loads storage dictionary from file"""
+        """Loads storage dictionary from JSON file"""
         from models.base_model import BaseModel
         from models.user import User
         from models.place import Place
@@ -67,3 +67,7 @@ class FileStorage:
                 if value == obj:
                     keyToDelete = key
             FileStorage.__objects.pop(keyToDelete)
+
+    def close(self):
+        """call reload() method for deserializing the JSON file to objects"""
+        self.reload()
