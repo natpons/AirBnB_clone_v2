@@ -31,7 +31,7 @@
 
 .popover {
 	max-height: 300px;
-	overflow:scroll;
+	overflow: auto;
 
 	list-style-type: none;
 	display: none;
